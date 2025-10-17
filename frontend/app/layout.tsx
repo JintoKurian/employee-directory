@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ApolloWrapper from "./providers/ApolloWrapper";
+import Navbar from "./components/Navbar";
 
 
 export const metadata: Metadata = {
@@ -15,9 +16,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="min-h-screen bg-background text-gray-900">
         <ApolloWrapper>
-        {children}
+          <Navbar />
+          <main className="container mx-auto px-4 py-6">
+            {children}
+          </main>
         </ApolloWrapper>
       </body>
     </html>

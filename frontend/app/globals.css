@@ -1,1 +1,17 @@
 @import "tailwindcss";
+
+:root {
+  --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(221 83% 63%));
+  --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(220 17% 99%));
+
+}
+
+
+.bg-gradient-primary {
+  background-image: var(--gradient-primary);
+}
+
+.bg-gradient-card{
+    background: var(--gradient-card);
+}
+
