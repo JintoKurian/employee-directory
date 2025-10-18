@@ -5,6 +5,7 @@ import { useState } from "react";
 import DropdownMenu from "./DropdownMenu";
 import SearchInput from "./SearchInput";
 import { useRouter } from "next/navigation";
+import EmployeeTableSkeleton from "./EmployeeTableSkelton";
 
 const GET_ALL_EMPLOYEES = gql`
   query GetAllEmployees {
@@ -34,7 +35,7 @@ export default function EmployeeList() {
   const { data, loading, error } = useQuery<GetAllEmployeesData>(GET_ALL_EMPLOYEES);
   const [selectedDepartment, setSelectedDepartment] = useState<string>("All");
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <EmployeeTableSkeleton/>;
   if (error) return <p>Error fetching employees: {error.message}</p>;
 
   const departments = ["All", ...new Set(data?.getAllEmployees?.map(emp => emp.department) || [])];

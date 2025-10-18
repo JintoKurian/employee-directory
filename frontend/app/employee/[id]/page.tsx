@@ -3,6 +3,7 @@ import { use } from "react";
 import { useQuery } from "@apollo/client/react";
 import { gql } from "@apollo/client";
 import { User, DollarSign, Briefcase, Building2 } from "lucide-react";
+import EmployeeDetailsSkeleton from "@/app/components/EmployeeDetailsSkeleton";
 
 const GET_EMPLOYEE_DETAILS = gql`
   query GetEmployeeDetails($id: ID!) {
@@ -42,7 +43,7 @@ export default function EmployeeDetails({
   );
 
   if (loading)
-    return <p className="text-center mt-10 text-gray-500">Loading...</p>;
+    return <EmployeeDetailsSkeleton />;
   if (error)
     return (
       <p className="text-center text-red-500 mt-10">

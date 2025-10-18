@@ -52,7 +52,19 @@ export default function EditEmployeePage({
   const { id } = use(params);
   const router = useRouter();
 
-  const { data, loading, error } = useQuery(GET_EMPLOYEE_DETAILS, {
+    interface Employee {
+  id: string;
+  name: string;
+  position: string;
+  department: string;
+  salary: string;
+}
+
+  interface GetEmployeeData {
+    getEmployeeDetails: Employee;
+  }
+
+  const { data, loading, error } = useQuery<GetEmployeeData>(GET_EMPLOYEE_DETAILS, {
     variables: { id },
   });
 
@@ -64,6 +76,9 @@ export default function EditEmployeePage({
     department: "",
     salary: "",
   });
+
+
+  
 
   // Prefill form data
   useEffect(() => {
