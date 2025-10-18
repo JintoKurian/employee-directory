@@ -69,9 +69,9 @@ export default function EmployeeForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md mx-auto bg-white shadow-md rounded-lg p-6 mt-6"
+      className="max-w-md mx-auto bg-white shadow-xl border border-gray-200 rounded-lg p-6 mt-6"
     >
-      <h2 className="text-xl font-semibold mb-4 text-center">Add New Employee</h2>
+      <h2 className="text-xl font-semibold mb-4 text-center  bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Add New Employee</h2>
 
       <div className="mb-3">
         <label className="block text-sm font-medium mb-1">Name</label>
